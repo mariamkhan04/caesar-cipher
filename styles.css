@@ -1,0 +1,202 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url(bg.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem; /* Add padding for small screens */
+  }
+  
+  /* Main Container to Hold Both Sections */
+  .main-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Maximum width for larger screens */
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  
+  /* Left Container for Description */
+  .description-container {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 2rem;
+    width: 100%; /* Full width on small screens */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center; /* Center text on small screens */
+  }
+  
+  .description-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .description-container p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Right Container for Cipher Functionality */
+  .container {
+    padding: 2rem;
+    width: 100%; /* Full width on small screens */
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #4a90e2;
+  }
+  
+  .input-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; /* Space between buttons */
+    flex-wrap: wrap; /* Wrap buttons on small screens */
+  }
+  
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Equal width for buttons */
+  }
+  
+  #encrypt-btn {
+    background-color: #4a90e2;
+    color: #fff;
+  }
+  
+  #decrypt-btn {
+    background-color: #ce7059;
+    color: #fff;
+  }
+  
+  #reset-btn {
+    background-color: #74ff52;
+    color: #fff;
+  }
+  
+  #encrypt-btn:hover {
+    background-color: #357abd;
+  }
+  
+  #decrypt-btn:hover {
+    background-color: #943d27;
+  }
+  
+  #reset-btn:hover {
+    background-color: #41972c;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (min-width: 768px) {
+    .main-container {
+      flex-direction: row; /* Side-by-side layout on larger screens */
+    }
+  
+    .description-container {
+      width: 40%; /* Fixed width for description */
+      text-align: left; /* Align text to the left */
+    }
+  
+    .container {
+      width: 60%; /* Fixed width for cipher functionality */
+    }
+  
+    .button-container {
+      flex-wrap: nowrap; /* Prevent buttons from wrapping */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .description-container {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    
+    .container{
+        padding: 1rem;
+    }
+    h1 {
+      font-size: 2rem; /* Smaller heading on small screens */
+    }
+  
+    button {
+      font-size: 0.9rem; /* Smaller buttons on small screens */
+      padding: 0.6rem 1rem;
+    }
+    textarea{
+        height: 100px;
+    }
+  }
+
+  @media(max-width: 500px){
+    .description-container{
+        padding: 1rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .description-container{
+        padding: 0.5rem;
+    }
+    .description-container h2{
+        font-size: 1.2rem;
+    }
+    .description-container p{
+        font-size: 0.5;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .container{
+        padding: 0.5rem;
+    }
+  }
