@@ -31,29 +31,31 @@ function decrypt(text) {
 
 // DOM Elements
 const textInput = document.getElementById('text-input');
+const resultText = document.getElementById('result-text');
 const textLabel = document.getElementById('text-label');
 const encryptBtn = document.getElementById('encrypt-btn');
 const decryptBtn = document.getElementById('decrypt-btn');
-const resetBtn = document.getElementById('reset-btn'); 
+const resetBtn = document.getElementById('reset-btn');
 
 // Event Listeners
 encryptBtn.addEventListener('click', () => {
   const text = textInput.value;
   if (text) {
-    textInput.value = encrypt(text);
-    textLabel.textContent = 'Cipher Text';
-  }
-});
-
-decryptBtn.addEventListener('click', () => {
-  const text = textInput.value;
-  if (text) {
-    textInput.value = decrypt(text);
+    resultText.value = encrypt(text);
     textLabel.textContent = 'Plain Text';
   }
 });
 
+decryptBtn.addEventListener('click', () => {
+  const text = resultText.value;
+  if (text) {
+    resultText.value = decrypt(text);
+    textLabel.textContent = 'Cipher Text';
+  }
+});
+
 resetBtn.addEventListener('click', () => {
-    textInput.value = ''; // Clear the text area
-    textLabel.textContent = 'Plain Text'; // Reset the label
-  });
+  textInput.value = ''; // Clear the input text area
+  resultText.value = ''; // Clear the result text area
+  textLabel.textContent = 'Plain Text'; // Reset the label
+});
